@@ -1,0 +1,18 @@
+select table_name, min(partition_name) minPart, max(partition_name) maxPart,
+min(PARTITION_ORDINAL_POSITION) as minPosition, max(PARTITION_ORDINAL_POSITION) as maxPosition,
+min(PARTITION_DESCRIPTION) as minDescription, max(PARTITION_DESCRIPTION) as maxDescription
+from 
+(select p.table_name, partition_name,PARTITION_ORDINAL_POSITION,PARTITION_DESCRIPTION from information_schema.partitions p
+left join 
+(select * from information_schema.tables
+where TABLE_SCHEMA='dbl'
+and table_name not like 'lcr%'
+and table_name not like 'rate%') t
+on p.table_name=t.table_name
+where p.TABLE_SCHEMA='dbl'
+and p.partition_name is not null
+and p.table_name not like 'lcr%'
+and p.table_name not like 'rate%'
+and p.table_name in ('billinfo','cdrloaded','cdrsummary')) x
+group by table_name
+

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{026CA12F-1A70-430B-AA9F-846D4D461B91}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TelcobrightMediation</RootNamespace>
+    <AssemblyName>MefInvoices</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\CurrencyHelper.cs" />
+    <Compile Include="Helper\TemplateNameHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSP.Designer.cs">
+      <DependentUpon>LTFSToIPTSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOS.Designer.cs">
+      <DependentUpon>InternationalToIOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANS.Designer.cs">
+      <DependentUpon>DomesticToANS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails1.Designer.cs">
+      <DependentUpon>LTFSToIPTSPDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails1.Designer.cs">
+      <DependentUpon>InternationalToIOSDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails1.Designer.cs">
+      <DependentUpon>DomesticToANSDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails2.Designer.cs">
+      <DependentUpon>LTFSToIPTSPDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails2.Designer.cs">
+      <DependentUpon>InternationalToIOSDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails2.Designer.cs">
+      <DependentUpon>DomesticToANSDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANS.Designer.cs">
+      <DependentUpon>InternationalOutgoingToANS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails1.Designer.cs">
+      <DependentUpon>InternationalOutgoingToANSDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails2.Designer.cs">
+      <DependentUpon>InternationalOutgoingToANSDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails2.Designer.cs">
+      <DependentUpon>InternationalOutgoingToIOSDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails1.Designer.cs">
+      <DependentUpon>InternationalOutgoingToIOSDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOS.Designer.cs">
+      <DependentUpon>InternationalOutgoingToIOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails2.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails1.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrier.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrier.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrier.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails1.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails2.Designer.cs">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails2.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSP.resx">
+      <DependentUpon>LTFSToIPTSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOS.resx">
+      <DependentUpon>InternationalToIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\DomesticToANS.resx">
+      <DependentUpon>DomesticToANS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails1.resx">
+      <DependentUpon>LTFSToIPTSPDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails1.resx">
+      <DependentUpon>InternationalToIOSDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails1.resx">
+      <DependentUpon>DomesticToANSDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\LTFSToIPTSPDetails2.resx">
+      <DependentUpon>LTFSToIPTSPDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalToIOSDetails2.resx">
+      <DependentUpon>InternationalToIOSDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\DomesticToANSDetails2.resx">
+      <DependentUpon>DomesticToANSDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANS.resx">
+      <DependentUpon>InternationalOutgoingToANS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails1.resx">
+      <DependentUpon>InternationalOutgoingToANSDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\jsl\ICX\InternationalOutgoingToANSDetails2.resx">
+      <DependentUpon>InternationalOutgoingToANSDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails2.resx">
+      <DependentUpon>InternationalOutgoingToIOSDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOSDetails1.resx">
+      <DependentUpon>InternationalOutgoingToIOSDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalOutgoingToIOS.resx">
+      <DependentUpon>InternationalOutgoingToIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails2.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrierDetails1.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\btel\IGW\InternationalIncomingToForeignCarrier.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrier.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails1.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\InvoiceReports\rgrn\Transit\InternationalIncomingToForeignCarrierDetails2.resx">
+      <DependentUpon>InternationalIncomingToForeignCarrierDetails2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryExtensions\LibraryExtensions.csproj">
+      <Project>{d4c2f34d-4d3d-43ae-84f0-e80cfedb1b48}</Project>
+      <Name>LibraryExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mediation\_00Mediation.csproj">
+      <Project>{1a64e6f9-903c-416c-b322-1b5c5d997001}</Project>
+      <Name>_00Mediation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models_Mediation\Models_Mediation.csproj">
+      <Project>{4282d6f4-efd2-418a-be9f-74f09b7a45d8}</Project>
+      <Name>Models_Mediation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)Portal\Extensions\InvoiceTemplates\$(TargetFileName)
+
+
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

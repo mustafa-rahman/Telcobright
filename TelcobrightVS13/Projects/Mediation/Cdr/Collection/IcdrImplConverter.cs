@@ -1,0 +1,117 @@
+using MediationModel;
+
+namespace TelcobrightMediation.Mediation.Cdr
+{
+    public class IcdrImplConverter<T> where T : ICdr, new()
+    {
+        public T Convert(ICdr source)
+        {
+            T convertedCdrVariant=new T();
+            convertedCdrVariant.SwitchId = source.SwitchId;
+            convertedCdrVariant.IdCall = source.IdCall;
+            convertedCdrVariant.SequenceNumber = source.SequenceNumber;
+            convertedCdrVariant.FileName = source.FileName;
+            convertedCdrVariant.ServiceGroup = source.ServiceGroup;
+            convertedCdrVariant.IncomingRoute = source.IncomingRoute;
+            convertedCdrVariant.OriginatingIP = source.OriginatingIP;
+            convertedCdrVariant.OPC = source.OPC;
+            convertedCdrVariant.OriginatingCIC = source.OriginatingCIC;
+            convertedCdrVariant.OriginatingCalledNumber = source.OriginatingCalledNumber;
+            convertedCdrVariant.TerminatingCalledNumber = source.TerminatingCalledNumber;
+            convertedCdrVariant.OriginatingCallingNumber = source.OriginatingCallingNumber;
+            convertedCdrVariant.TerminatingCallingNumber = source.TerminatingCallingNumber;
+            convertedCdrVariant.PrePaid = source.PrePaid;
+            convertedCdrVariant.DurationSec = source.DurationSec;
+            convertedCdrVariant.EndTime = source.EndTime;
+            convertedCdrVariant.ConnectTime = source.ConnectTime;
+            convertedCdrVariant.AnswerTime = source.AnswerTime;
+            convertedCdrVariant.ChargingStatus = source.ChargingStatus;
+            convertedCdrVariant.PDD = source.PDD;
+            convertedCdrVariant.CountryCode = source.CountryCode;
+            convertedCdrVariant.AreaCodeOrLata = source.AreaCodeOrLata;
+            convertedCdrVariant.ReleaseDirection = source.ReleaseDirection;
+            convertedCdrVariant.ReleaseCauseSystem = source.ReleaseCauseSystem;
+            convertedCdrVariant.ReleaseCauseEgress = source.ReleaseCauseEgress;
+            convertedCdrVariant.OutgoingRoute = source.OutgoingRoute;
+            convertedCdrVariant.TerminatingIP = source.TerminatingIP;
+            convertedCdrVariant.DPC = source.DPC;
+            convertedCdrVariant.TerminatingCIC = source.TerminatingCIC;
+            convertedCdrVariant.StartTime = source.StartTime;
+            convertedCdrVariant.InPartnerId = source.InPartnerId;
+            convertedCdrVariant.CustomerRate = source.CustomerRate;
+            convertedCdrVariant.OutPartnerId = source.OutPartnerId;
+            convertedCdrVariant.SupplierRate = source.SupplierRate;
+            convertedCdrVariant.MatchedPrefixY = source.MatchedPrefixY;
+            convertedCdrVariant.UsdRateY = source.UsdRateY;
+            convertedCdrVariant.MatchedPrefixCustomer = source.MatchedPrefixCustomer;
+            convertedCdrVariant.MatchedPrefixSupplier = source.MatchedPrefixSupplier;
+            convertedCdrVariant.InPartnerCost = source.InPartnerCost;
+            convertedCdrVariant.OutPartnerCost = source.OutPartnerCost;
+            convertedCdrVariant.CostAnsIn = source.CostAnsIn;
+            convertedCdrVariant.CostIcxIn = source.CostIcxIn;
+            convertedCdrVariant.Tax1 = source.Tax1;
+            convertedCdrVariant.IgwRevenueIn = source.IgwRevenueIn;
+            convertedCdrVariant.RevenueAnsOut = source.RevenueAnsOut;
+            convertedCdrVariant.RevenueIgwOut = source.RevenueIgwOut;
+            convertedCdrVariant.RevenueIcxOut = source.RevenueIcxOut;
+            convertedCdrVariant.Tax2 = source.Tax2;
+            convertedCdrVariant.XAmount = source.XAmount;
+            convertedCdrVariant.YAmount = source.YAmount;
+            convertedCdrVariant.AnsPrefixOrig = source.AnsPrefixOrig;
+            convertedCdrVariant.AnsIdOrig = source.AnsIdOrig;
+            convertedCdrVariant.AnsPrefixTerm = source.AnsPrefixTerm;
+            convertedCdrVariant.AnsIdTerm = source.AnsIdTerm;
+            convertedCdrVariant.ValidFlag = source.ValidFlag;
+            convertedCdrVariant.PartialFlag = source.PartialFlag;
+            convertedCdrVariant.ReleaseCauseIngress = source.ReleaseCauseIngress;
+            convertedCdrVariant.InRoamingOpId = source.InRoamingOpId;
+            convertedCdrVariant.OutRoamingOpId = source.OutRoamingOpId;
+            convertedCdrVariant.CalledPartyNOA = source.CalledPartyNOA;
+            convertedCdrVariant.CallingPartyNOA = source.CallingPartyNOA;
+            convertedCdrVariant.AdditionalSystemCodes = source.AdditionalSystemCodes;
+            convertedCdrVariant.AdditionalPartyNumber = source.AdditionalPartyNumber;
+            convertedCdrVariant.ResellerIds = source.ResellerIds;
+            convertedCdrVariant.ZAmount = source.ZAmount;
+            convertedCdrVariant.PreviousRoutes = source.PreviousRoutes;
+            convertedCdrVariant.E1Id = source.E1Id;
+            convertedCdrVariant.MediaIp1 = source.MediaIp1;
+            convertedCdrVariant.MediaIp2 = source.MediaIp2;
+            convertedCdrVariant.MediaIp3 = source.MediaIp3;
+            convertedCdrVariant.MediaIp4 = source.MediaIp4;
+            convertedCdrVariant.CallReleaseDuration = source.CallReleaseDuration;
+            convertedCdrVariant.E1IdOut = source.E1IdOut;
+            convertedCdrVariant.InTrunkAdditionalInfo = source.InTrunkAdditionalInfo;
+            convertedCdrVariant.OutTrunkAdditionalInfo = source.OutTrunkAdditionalInfo;
+            convertedCdrVariant.InMgwId = source.InMgwId;
+            convertedCdrVariant.OutMgwId = source.OutMgwId;
+            convertedCdrVariant.MediationComplete = source.MediationComplete;
+            convertedCdrVariant.Codec = source.Codec;
+            convertedCdrVariant.ConnectedNumberType = source.ConnectedNumberType;
+            convertedCdrVariant.RedirectingNumber = source.RedirectingNumber;
+            convertedCdrVariant.CallForwardOrRoamingType = source.CallForwardOrRoamingType;
+            convertedCdrVariant.OtherDate = source.OtherDate;
+            convertedCdrVariant.SummaryMetaTotal = source.SummaryMetaTotal;
+            convertedCdrVariant.TransactionMetaTotal = source.TransactionMetaTotal;
+            convertedCdrVariant.ChargeableMetaTotal = source.ChargeableMetaTotal;
+            convertedCdrVariant.ErrorCode = source.ErrorCode;
+            convertedCdrVariant.NERSuccess = source.NERSuccess;
+            convertedCdrVariant.RoundedDuration = source.RoundedDuration;
+            convertedCdrVariant.PartialDuration = source.PartialDuration;
+            convertedCdrVariant.PartialAnswerTime = source.PartialAnswerTime;
+            convertedCdrVariant.PartialEndTime = source.PartialEndTime;
+            convertedCdrVariant.FinalRecord = source.FinalRecord;
+            convertedCdrVariant.Duration1 = source.Duration1;
+            convertedCdrVariant.Duration2 = source.Duration2;
+            convertedCdrVariant.Duration3 = source.Duration3;
+            convertedCdrVariant.Duration4 = source.Duration4;
+            convertedCdrVariant.PreviousPeriodCdr = source.PreviousPeriodCdr;
+            convertedCdrVariant.UniqueBillId = source.UniqueBillId;
+            convertedCdrVariant.AdditionalMetaData = source.AdditionalMetaData;
+            convertedCdrVariant.Category = source.Category;
+            convertedCdrVariant.SubCategory = source.SubCategory;
+            convertedCdrVariant.ChangedByJobId = source.ChangedByJobId;
+            convertedCdrVariant.SignalingStartTime = source.SignalingStartTime;
+            return convertedCdrVariant;
+        }
+    }
+}
